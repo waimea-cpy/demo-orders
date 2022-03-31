@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius&family=Satisfy&display=swap');
+
+
+:root {
+    --accent: #e91e63;
+    --contrast: #03a9f4;
+
+    --back-main: #000;
+    --back-head: var(--contrast);
+    --back-card: #fff;
+    --back-alt: #fce4ec;
+    --back-panel: #111;
+
+    --text-high: #111;
+    --text-low: #888;
+    --text-inv: #fce4ec;
+
+    --shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
+    --shadow-small: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
+}
+
+
+/*** DEBUG *******************************************************/
+
+/* main, header, nav, div, ul, ol, li, h1, h2, h3 {
+    outline: 1px solid red;
+} */
+
+
+/*** GENERAL *******************************************************/
+
+html,
+body {
+    font-family: 'Delius', sans-serif;
+    font-size: 24px;
+    background: var(--back-main);
+    color: var(--text-high);
+
+    background-image: url('../images/back.png');
+    background-position: bottom right;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Satisfy', system-ui, sans-serif;
+}
+
+
+h2 {
+    font-size: 2.2rem;
+    /* margin-bottom: 2rem; */
+    color: var(--accent);
+}
+
+p:not(:last-child) {
+    margin-bottom: 0.75rem;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--contrast);
+    text-decoration: none;
+    text-decoration: underline;
+}
+
+
+/*** HEADER *******************************************************/
+
+#main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    position: sticky;
+    top: 0;
+    z-index: 99;
+
+    padding: 0.5rem 1rem;
+    background: var(--back-head);
+    box-shadow: var(--shadow);
+    border-bottom: 5px solid var(--accent);
+}
+
+#main-header h1,
+#main-header h1 a {
+    font-size: min(2rem, 8vw);
+    color: var(--accent);
+    text-decoration: none;
+    text-shadow: 0.01em 0.03em 0 var(--text-inv);
+}
+
+#main-header h1 a {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+#main-header img {
+    width: 3rem;
+    height: 3rem;
+}
+
+
+#user-info {
+    font-size: 1.2rem;
+    color: var(--text-inv);
+}
+
+@media screen and (max-width: 50rem) {
+    #user-info {
+        display: none;
+    }
+}
+
+
+/*** NAV *******************************************************/
+
+#main-nav img {
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+}
+
+#main-nav input {
+    display: none;
+}
+
+#main-nav ul {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    min-width: 10rem;
+    padding: 1rem;
+    background: var(--back-panel);
+    box-shadow: var(--shadow);
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 999;
+}
+
+#main-nav a {
+    text-decoration: none;
+}
+
+#main-nav a:hover {
+    text-decoration: underline;
+}
+
+#main-nav input:not(:checked)~ul {
+    display: none;
+}
+
+@media screen and (min-width: 80rem) {
+    #main-nav img {
+        display: none;
+    }
+
+    #main-nav ul,
+    #main-nav input:not(:checked)~ul {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        gap: 0.5rem;
+        font-size: 1rem;
+        background: none;
+        box-shadow: none;
+    }
+
+    #main-nav a {
+        background: var(--accent);
+        color: var(--text-inv);
+        padding: 0.1rem 0.3rem;
+        border-radius: 0.5rem;
+        border: 3px solid var(--accent);
+    }
+
+    #main-nav a:hover {
+        background: var(--text-inv);
+        color: var(--accent);
+        text-decoration: none;
+    }
+
+}
+
+
+/*** MAIN *******************************************************/
+
+main {
+    padding: 1.5rem 1rem;
+
+    min-height: calc(100vh - 7rem);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+main>h1 {
+    font-size: min(4rem, 12vw);
+    color: var(--accent);
+    text-shadow: 0.01em 0.03em 0 var(--text-inv);
+}
+
+main>h1 span {
+    display: block;
+    font-size: 1.5em;
+}
+
+main>p {
+    text-align: center;
+    color: var(--text-inv);
+}
+
+
+
+/*** CARDS *******************************************************/
+
+.card-list {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-list .card {
+    width: 100%;
+    max-width: 18rem;
+    font-size: min(1rem, 5vw);
+}
+
+.card {
+    background: var(--back-card);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 4px solid var(--accent);
+    box-shadow: var(--shadow);
+}
+
+.card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.card label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-low);
+    margin-bottom: 0.1rem;
+}
+
+.card label:not(:first-of-type) {
+    margin-top: 0.5rem;
+}
+
+.card.admin {
+    background: var(--back-alt);
+}
+
+
+/*** TABLES *******************************************************/
+
+table {
+    width: 100%;
+    max-width: 50rem;
+    outline: 4px solid var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+tr {
+    background: var(--back-card);
+}
+
+tr.completed {
+    color: var(--text-low);
+    text-decoration: line-through;
+}
+
+tbody tr:nth-child(odd) {
+    background: var(--back-alt);
+}
+
+thead tr {
+    background: var(--contrast);
+    border-bottom: 3px solid var(--accent);
+}
+
+tfoot tr {
+    background: var(--contrast);
+    border-top: 3px solid var(--accent);
+}
+
+tfoot th {
+    text-align: right;
+    border-right: 4px solid var(--accent);
+}
+
+tfoot td {
+    background: var(--back-card);
+    font-weight: bold;
+}
+
+th,
+td {
+    padding: 0.5rem 1rem;
+    text-align: left;
+}
+
+th.number,
+td.number {
+    text-align: right;
+}
+
+th.centred,
+td.centred {
+    text-align: center;
+}
+
+
+/*** FORMS *******************************************************/
+
+form {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 30rem
+}
+
+form.card label {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+input,
+textarea {
+    display: block;
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 0.3rem 0.5rem;
+    color: var(--text-high);
+    background: var(--back-card);
+    border: 3px solid var(--accent);
+    border-radius: 0.4rem;
+}
+
+input[type=number],
+input[type=date],
+input[type=checkbox],
+input[type=submit] {
+    width: auto;
+}
+
+input[type=checkbox] {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+textarea {
+    min-height: 8rem;
+}
+
+input[type=submit] {
+    color: var(--text-inv);
+    background: var(--accent);
+    margin: 2rem 0 0.5rem auto;
+}
+
+input[type=submit]:hover {
+    background: var(--contrast);
+    color: var(--text-high);
+    cursor: pointer;
+}
+
+
+form.inline {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+form.inline:not(:first-of-type) {
+    margin-top: 0.25rem;
+}
+
+form.inline input {
+    margin: 0;
+    width: auto;
+}
+
+form.inline p {
+    margin: 0;
+}
+
+form.inline p.product {
+    flex: 1;
+}
+
+form.inline input {
+    padding: 0.1rem 0.5rem;
+    font-size: 1rem;
+}
+
+form.inline input[type=number] {
+    width: 3rem;
+    text-align: right;
+}
+
+table form.inline input[type=submit] {
+    padding: 0 0.3rem;
+}
