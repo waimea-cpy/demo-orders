@@ -7,11 +7,12 @@ Demonstrates:
 - Admin level users
 - Use of session data
 - Adaption of UI based on login status
+- Cart-based ordering system
 - CRUD functionality:
    - Creation of new orders
    - Reading of existing order info
-   - Updating of orders (as products added)
-   - Deletion of orders / products in an order
+   - Updating of orders (e.g. marked as complete)
+   - Deletion of orders
 - Relational DB queries
    - Queries from individual tables
    - Queries with JOINs from both
@@ -25,24 +26,58 @@ Site has a simple but responsive UI, including:
 
 ## Screenshots
 
-Post Feed
+Home page
 
-![Post Feed](ui/ui-feed.png)
+![Home page](ui/ui-home.png)
 
-Post List
+Home page on mobile
 
-![Post List](ui/ui-list.png)
+![Home page mobile](ui/ui-mob.png)
 
-Post View
+Mobile menu
 
-![Post View](ui/ui-view.png)
+![Menu](ui/ui-mob-menu.png)
 
-New Post
+Product List
 
-![New Post](ui/ui-new.png)
+![Products](ui/ui-products.png)
 
-Menu
+Create New Account
 
-![Menu](ui/ui-menu.png)
+![New Account](ui/ui-account.png)
+
+Login
+
+![Login](ui/ui-login.png)
+
+Create New Order
+
+![New Order](ui/ui-order-new.png)
+
+Order In Progress
+
+![Order Progress](ui/ui-order-progress.png)
+
+View Own Orders
+
+![Own Orders](ui/ui-orders.png)
+
+### Admin Views
+
+View All Orders
+
+![All Orders](ui/ui-orders-all.png)
+
+Order Details
+
+![Order](ui/ui-order.png)
+
+View All Users
+
+![All Users](ui/ui-users-all.png)
+
+User Details
+
+![User](ui/ui-user.png)
 
 

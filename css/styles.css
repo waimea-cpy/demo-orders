@@ -32,7 +32,7 @@
 html,
 body {
     font-family: 'Delius', sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     background: var(--back-main);
     color: var(--text-high);
 
@@ -211,7 +211,7 @@ main {
 }
 
 main>h1 {
-    font-size: min(4rem, 12vw);
+    font-size: min(5rem, 12vw);
     color: var(--accent);
     text-shadow: 0.01em 0.03em 0 var(--text-inv);
 }
@@ -283,7 +283,7 @@ main>p {
 
 table {
     width: 100%;
-    max-width: 50rem;
+    max-width: 40rem;
     outline: 4px solid var(--accent);
     margin-bottom: 1.5rem;
 }

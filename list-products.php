@@ -18,10 +18,10 @@
 
         echo   '<h2>'.$product['name'].'</h2>';
 
+        echo   '<p>$ <strong>'.$product['cost'].'</strong> per session</p>';
+
         echo   '<p>'.nl2br( $product['description'] ).'</p>';
         
-        echo   '<p>$'.$product['cost'].' per session</p>';
-
         echo '</div>';
     }
 
